@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Производство </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #42e0c6;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Шапка с фоновым изображением */
+        .header-banner {
+            background-image: url('Глав.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-banner h1 {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: none;
+        }
+        
+        .header-banner h2 {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: none;
+        }
+        
+        /* Логотип сайта */
+        .site-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px;
+            z-index: 2;
+        }
+        
+        /* Основное содержание */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .mission-content {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #007BFF;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #3c90e9;
+            font-size: 1.6rem;
+            margin: 30px 0 15px;
+            font-weight: 500;
+            padding-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Подвал */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 30px 0;
+        }
+        
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s;
+            font-size: 1.2em;
+        }
+        
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+        
+        @media (max-width: 768px) {
+            .header-banner {
+                height: 200px;
+            }
+            
+            .mission-content {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Шапка с фоновым изображением -->
+<div class="header-banner" id="headerBanner">
+    <div class="header-bg"></div>
+    <a href="Главный.php" class="site-logo-link" aria-label="Перейти на главную страницу">
+        <img src="logo.svg" alt="Логотип компании" class="site-logo">
+    </a>
+    <div class="header-content">
+        <h1>Деталь</h1>
+        <h2>Уральское проектно-конструкторское бюро</h2>
+    </div>
+</div>
+
+<!-- Основное содержание страницы -->
+<div class="content-container">
+    <div class="mission-content">
+        <h1>Наше производство</h1>
+        
+        <p>На предприятии организован замкнутый цикл изготовления изделий – от заготовки до конечной продукции, включая этапы контроля, испытаний и сдачи изделий заказчику. Имеющаяся материально-техническая база, находящаяся на завершающих этапах модернизации и технического перевооружения, позволяет изготавливать продукцию собственными силами, без привлечения сторонних технологических переделов.</p>
+
+        <h2>Микроэлектроника</h2>
+        <p>Реализовано изготовление герметичных гибридных микроэлектронных устройств СВЧ-диапазона, заполненных осушенным аргоном. Используются следующие материалы подложек: алюмооксидная керамика (поликор), ситаллы, фторопласты, керамика, ферриты, кварц толщиной 0,25-2,5 мм. Структура проводников хром-медь-покрытия толщиной 3-12 мкм. Покрытия: золото, олово-висмут, никель, точность изготовления элементов ± 5 мкм. Применяются следующие методы сборки и монтажа: термокомпрессионная сварка, микросварка расщеплённым электродом, термозвуковая и ультразвуковая микросварки.</p>
+        
+        <p>В настоящее время в производстве микроэлектроники начинают активно применяться «системы-в-корпусе», построенные на монолитных интегральных схемах (МИС) по технологии «система-на-кристалле». На предприятии функционирует специализированный дизайн-центр, часть серийных изделий изготавливается с применением МИС.</p>
+
+        <h2>Механообработка</h2>
+        <p>Осуществляются все виды механической обработки корпусов и составных частей изделий: слесарная, токарная и фрезерная операции, в том числе с использованием 3-х, 4-х и 5-и -координатных обрабатывающих центров с ЧПУ, а также операции прессования, сварки, гибки и гравировки.</p>
+
+        <h2>Сборочно-монтажные работы</h2>
+        <p>Осуществляются следующие виды операций: радиомонтаж, опайка, сборка радиоузлов, изготовление жгутов. Монтажно-сборочные участки осуществляют окончательную сборку изделий и сдачу ОТК и ВП МО РФ.</p>
+
+        <h2>Настройка и регулировка</h2>
+        <p>Осуществляется настройка и регулировка изделий их составных частей с использованием разработанной и изготовленной Обществом специализированной контрольно-проверочной аппаратуры, а также многофункциональных высокоточных радиоизмерительных приборов ведущих мировых производителей. Участки настройки оснащены собственными климатическими камерами для проведения настройки и регулировки в диапазоне рабочих температур.</p>
+
+        <h2>Испытания</h2>
+        <p>Испытательный центр Общества позволяет реализовать полный спектр климатических и механических испытаний, необходимых для подтверждения технических и эксплуатационных характеристик продукции. В рамках модернизации производства к 2020 г. планируется существенное расширение возможностей испытательного центра Общества за счет обособления его в отдельном строящемся корпусе, расширения номенклатуры оборудования и спектра проводимых испытаний.</p>
+
+        <h2>Гальваника и печатные платы</h2>
+        <p>В одном цехе объединены гальваническое и химическое производство, лакировочный участок, участки изготовления моточных изделий, односторонних и двусторонних печатных плат. Освоены и успешно применяются следующие виды покрытий: меднение, кадмирование, химическое оксидирование, анодное оксидирование, серебрение, химическое никелирование, эматалирование, олово-висмут.</p>
+        
+        <div style="text-align: center;">
+            <a href="Главный.php" class="btn">На главную</a>
+        </div>
+    </div>
+</div>
+
+<!-- Подвал сайта -->
+<footer>
+    <p>© 2025 г. Троицк</p>
+</footer>
+
+</body>
+</html>

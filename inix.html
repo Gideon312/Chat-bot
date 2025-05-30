@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тест чат-бота</title>
+</head>
+<body>
+    <button onclick="sendRequest()">Отправить "Привет" боту</button>
+    <script>
+        async function sendRequest() {
+            const response = await fetch('http://127.0.0.1:5000/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: "Привет" })
+            });
+            const data = await response.json();
+            alert("Ответ бота: " + data.response);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Чат-бот УПКБ "Деталь"</title>
+    <style>
+        #chat-container {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .message {
+            margin: 8px 0;
+            padding: 8px 12px;
+            border-radius: 18px;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #e3f2fd;
+            margin-left: auto;
+            text-align: right;
+        }
+        .bot-message {
+            background: #f1f1f1;
+            margin-right: auto;
+        }
+        #buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .chat-button {
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .chat-button:hover {
+            background: #45a049;
+        }
+        #input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        #send-button {
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h2>Чат-бот УПКБ "Деталь"</h2>
+        <div id="messages"></div>
+        <div id="buttons-container"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Введите сообщение...">
+            <button id="send-button" onclick="sendMessage()">Отправить</button>
+        </div>
+    </div>
+
+    <script>
+        // Инициализация - загружаем кнопки при старте
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchButtons();
+        });
+
+        function fetchButtons() {
+            fetch('chatbot.php', {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    displayMessage(data.response, false);
+                    updateButtons(data.buttons);
+                }
+            })
+            .catch(error => {
+                displayMessage('Ошибка загрузки кнопок', false);
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (!message) return;
+            
+            displayMessage(message, true);
+            input.value = '';
+            
+            fetch('chatbot.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({message: message})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    displayMessage(data.response, false);
+                    updateButtons(data.buttons);
+                } else {
+                    displayMessage('Ошибка: ' + data.message, false);
+                }
+            })
+            .catch(error => {
+                displayMessage('Ошибка соединения', false);
+            });
+        }
+
+        function displayMessage(message, isUser) {
+            const messages = document.getElementById('messages');
+            const div = document.createElement('div');
+            div.className = isUser ? 'message user-message' : 'message bot-message';
+            
+            // Сохраняем переносы строк
+            message.split('\n').forEach((line, i) => {
+                if (i > 0) div.appendChild(document.createElement('br'));
+                div.appendChild(document.createTextNode(line));
+            });
+            
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function updateButtons(buttons) {
+            const container = document.getElementById('buttons-container');
+            container.innerHTML = '';
+            
+            buttons.forEach(btn => {
+                const button = document.createElement('button');
+                button.className = 'chat-button';
+                button.textContent = btn;
+                button.onclick = () => {
+                    document.getElementById('user-input').value = btn;
+                    sendMessage();
+                };
+                container.appendChild(button);
+            });
+        }
+
+        // Отправка сообщения по нажатию Enter
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

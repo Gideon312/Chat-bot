@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миссия предприятия - УПКБ Деталь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #42e0c6;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Шапка с фоновым изображением */
+        .header-banner {
+            background-image: url('Глав.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-banner h1 {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: none; /* Убрано подчеркивание */
+        }
+        
+        .header-banner h2 {
+            position: relative;
+            z-index: 1;
+            margin: 5px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: none; /* Убрано подчеркивание */
+        }
+        
+        /* Логотип сайта */
+        .site-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px;
+            z-index: 2;
+        }
+        
+        /* Основное содержание */
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .mission-content {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #007BFF;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #3c90e9;
+            font-size: 1.6rem;
+            margin: 30px 0 15px;
+            font-weight: 500;
+            padding-bottom: 8px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: disc; /* Возвращаем маркеры списка */
+        }
+        
+        li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Подвал */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 30px 0;
+        }
+        
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s;
+            font-size: 1.2em;
+        }
+        
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+        
+        @media (max-width: 768px) {
+            .header-banner {
+                height: 200px;
+            }
+            
+            .mission-content {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Шапка с фоновым изображением -->
+<div class="header-banner" id="headerBanner">
+    <div class="header-bg"></div>
+    <a href="Главный.php" class="site-logo-link" aria-label="Перейти на главную страницу">
+        <img src="logo.svg" alt="Логотип компании" class="site-logo">
+    </a>
+    <div class="header-content">
+        <h1>Деталь</h1>
+        <h2>Уральское проектно-конструкторское бюро</h2>
+    </div>
+</div>
+
+<!-- Основное содержание страницы -->
+<div class="content-container">
+    <div class="mission-content">
+        <h1>Миссия предприятия</h1>
+        
+        <h2>Стратегические цели Общества:</h2>
+        <ul>
+            <li>Расширение и углубление товарных рыночных "ниш"</li>
+            <li>Высокое и стабильное положение в отрасли</li>
+            <li>Повышение качества выполняемых работ и изготавливаемой продукции</li>
+            <li>Оптимизация издержек производства продукции</li>
+            <li>Повышение репутации Общества во внешней и внутренней средах</li>
+            <li>Признание Общества в области техники, технологии и инноваций</li>
+            <li>Повышение конкурентоспособности Общества</li>
+            <li>Полное удовлетворение Заказчиков (Потребителей) по качеству и номенклатуре продукции</li>
+            <li>Создание благоприятных условий для изобретательской и рационализаторской деятельности</li>
+        </ul>
+
+        <h2>Финансовые цели:</h2>
+        <ul>
+            <li>Рост объемов продаж и доходов Общества</li>
+            <li>Рост поступлений денежных средств</li>
+            <li>Увеличение прибыли</li>
+            <li>Повышение цены акции</li>
+            <li>Признание прочного финансового положения</li>
+            <li>Стабильный доход в периоды стагнации и периоды спада</li>
+            <li>Совершенствование и оптимизация системы оплаты и мотивации труда персонала</li>
+        </ul>
+
+        <h2>Социальные цели:</h2>
+        <ul>
+            <li>Создание деловой атмосферы и взаимоотношений, способствующих достижению высокого уровня удовлетворенности результатами собственного труда каждым работником в отдельности и персоналом Общества в целом, чувству гордости за причастность к деятельности Общества</li>
+            <li>Поощрение стремления персонала к повышению образовательного и квалификационного уровня, помощь в совершенствовании приобретенных навыков в работе</li>
+        </ul>
+        
+        <div style="text-align: center;">
+            <a href="Главный.php" class="btn">На главную</a>
+        </div>
+    </div>
+</div>
+
+<!-- Подвал сайта -->
+<footer>
+    <p>© 2025 г. Троицк</p>
+</footer>
+
+</body>
+</html>

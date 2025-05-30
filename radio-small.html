@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Радиовысотомеры малых высот - АО УПКБ Деталь">
+    <title>Радиовысотомеры малых высот - АО УПКБ Деталь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #42e0c6;
+            line-height: 1.6;
+        }
+        
+        .header-banner {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('Глав.jpg') no-repeat center center;
+            background-size: cover;
+            height: 50vh;
+            min-height: 300px;
+            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        .site-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px;
+            height: auto;
+            width: auto;
+            max-width: 200px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+            padding: 0 0px;
+        }
+        
+        .card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+        
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        
+        .card .description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .card:hover .description {
+            opacity: 1;
+        }
+        
+        .card:hover img {
+            opacity: 0.3;
+        }
+         
+        .btn {
+            display: block;
+            width: fit-content;
+            padding: 12px 24px;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 40px auto;
+            text-align: center;
+        }
+         
+        .category-radio-small {
+            border-top: 4px solid #1e88e5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-banner {
+                height: 40vh;
+                background-attachment: scroll;
+            }
+            
+            .card .description {
+                font-size: 0.8rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Шапка с фоновым изображением -->
+<div class="header-banner" id="headerBanner">
+    <div class="header-bg"></div>
+    <a href="Главный.php" class="site-logo-link" aria-label="Перейти на главную страницу">
+        <img src="logo.svg" alt="Логотип компании" class="site-logo">
+    </a>
+    <div class="header-content">
+        <h1>Деталь</h1>
+        <h2>Уральское проектно-конструкторское бюро</h2>
+    </div>
+</div>
+    
+    <main class="container">
+        <article class="card category-radio-small">
+            <h3>Малогабаритный авиационный радиовысотомер А-065А</h3>
+            <img src="A-065.jpg" alt="А-065А">
+            <div class="description">
+                Радиовысотомер А-065А является бортовой радиолокационной станцией с импульсным излучением радиоволн. 
+                Он имеет малые габариты и массу, высокую надежность и достоверность выдаваемой информации. 
+                Предназначен для дистанционно-пилотируемых летательных аппаратов, но может быть установлен на любой тип летательного аппарата.
+            </div>
+        </article>
+
+        <article class="card category-radio-small">
+            <h3>Малогабаритный авиационный радиовысотомер А-037</h3>
+            <img src="A-037.jpg" alt="А-037">
+            <div class="description">
+                Радиовысотомер А-037 является бортовой радиолокационной станцией с непрерывным излучением частотно-модулированных радиоволн. 
+                А-037 не имеет ступенчатой ошибки, соответствует требованиям TSO-C87. Лёгкий и компактный, точный и надёжный, удобный в эксплуатации.
+                Радиовысотомер А-037 разработан для лёгких самолётов и вертолётов, 
+                но может устанавливаться на все типы летательных аппаратов и использоваться взамен радиовысотомера РВ-5.
+            </div>
+        </article>
+
+        <article class="card category-radio-small">
+            <h3>Малогабаритный авиационный радиовысотомер А-052</h3>
+            <img src="A-052.jpg" alt="А-052">
+            <div class="description">
+                Радиовысотомер А-052 является бортовой радиолокационной станцией с непрерывным излучением частотно-модулированных радиоволн. 
+                Имеет малые габариты и массу, высокую надежность и достоверность выдаваемой информации.
+                Конструкция приемопередатчика позволяет установку без амортизации на борт летательного аппарата. 
+                Радиовысотомер предназначен для вертолетов, но может быть установлен на любой тип летательного аппарата с минимальной высотой установки антенн в посадочной (стояночной) конфигурации от 0,3 м и более.
+                Комплектация радиовысотомера, его исполнение определяются типом объекта, схемой размещения на нем, видом связи с БРЭО.
+            </div>
+        </article>
+
+        <article class="card category-radio-small">
+            <h3>Малогабаритный авиационный радиовысотомер А-053</h3>
+            <img src="A-053.jpg" alt="А-053">
+            <div class="description">
+                Радиовысотомер А-053 является бортовой радиолокационной станцией с непрерывным излучением частотно-модулированных волн. 
+                Он имеет малые габариты и массу, высокую надежность и достоверность выдаваемой информации. Конструкция приемопередатчика позволяет установку без амортизации на борт летательного аппарата. Радиовысотомер предназначен для авиации общего назначения. Сертифицирован АР МАК.
+                Комплектация радиовысотомера, его исполнение определяются типом объекта, схемой размещения на нем, видом связи с БРЭО.
+            </div>
+        </article>
+    </main>
+    <a href="javascript:history.back()" class="btn">Назад</a>
+</body>
+</html>
